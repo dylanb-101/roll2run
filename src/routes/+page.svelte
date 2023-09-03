@@ -40,7 +40,7 @@
 
         <!-- address search bar -->
         <div class="row-start-2 row-end-3 col-span-3">
-            <input type="text" class="border-2 border-gray-400 rounded-md w-full hover:border-gray-500 transition ease-in-out bg-gray-100 text-black placeholder:text-gray-500 hover:drop-shadow-md" placeholder="Starting Address">
+            <input type="text" class="border-2 border-gray-400 rounded-md w-full hover:border-gray-500 transition ease-in-out bg-gray-100 text-black placeholder:text-gray-500 hover:drop-shadow-md" placeholder="16 Roller Ave">
         </div>
 
         <!-- my location button -->
