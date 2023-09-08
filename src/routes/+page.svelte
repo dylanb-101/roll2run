@@ -1,5 +1,37 @@
 <script>
 
+    // mapbox stuff
+
+    let map;
+    let mapContainer;
+    let lng, lat, zoom;
+    const MAPBOX_TOKEN = "pk.eyJ1IjoiZHlsYW5iMTAxIiwiYSI6ImNsa3k1MnJpcDA3aTkzZHBodXdwaHdvNzkifQ.zj1-wMgJAfu_4-R6AGjhvw";
+
+    lng = -71.224518;
+    lat = 42.213995;
+    zoom = 9;
+
+
+    import { Map } from "mapbox-gl";
+    
+
+    import { onMount, onDestroy } from "svelte";
+
+    onMount(() => {
+        const initialState = { lng: lng, lat: lat, zoom: zoom};
+
+        map = new Map({
+            container: mapContainer,
+            accessToken: MAPBOX_TOKEN,
+            style: `mapbox://styles/mapbox/outdoors-v11`,
+            center: [initialState.lng, initialState.lat],
+            zoom: initialState.zoom
+        })
+
+    })
+
+
+
 
 
     let measurment = "miles";
@@ -31,7 +63,7 @@
 
 <div class="bg-blue-400 w-screen h-screen pt-4 pr-4">
 
-    <div class=" bg-white mr-4 ml-4 p-4 grid grid-cols-8 grid-rows-5 gap-x-4 gap-y-2">
+    <div class=" bg-white mr-4 ml-4 p-4 grid grid-cols-8 grid-rows-5 gap-x-4 gap-y-2 h-screen">
         
         <!-- search bar header -->
         <div class="row-span-1 col-span-3 text-lg">
@@ -93,6 +125,16 @@
         </div>
 
         
+
+
+
+        <!-- map -->
+
+        <!-- <div class="col-start-5 col-end-9 row-span-full">
+
+            <div class="w-full h-full max-h-max" bind:this={mapContainer}/>
+
+        </div> -->
 
     </div>
 
